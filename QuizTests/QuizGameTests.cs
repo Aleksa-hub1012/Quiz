@@ -72,5 +72,11 @@ namespace Quiz.Tests
 
             Assert.Equal(75.0, game.CorrectAnswerPercentage, 2);
         }
+        [Fact]
+        public void CorrectAnswerPercentage_WhenNoAnswers_ShouldBeZero()
+        {
+            var game = new QuizGame();
+            Assert.Equal(0.0, game.CorrectAnswerPercentage);
+        }
     }    
 }
