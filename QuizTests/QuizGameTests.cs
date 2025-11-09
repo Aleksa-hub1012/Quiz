@@ -60,5 +60,17 @@ namespace Quiz.Tests
 
             Assert.Equal(50.0, game.CorrectAnswerPercentage, 2);
         }
+        [Fact]
+        public void CorrectAnswerPercentage_When3Of4_ShouldBe75()
+        {
+            var game = new QuizGame();
+
+            game.GiveAnswer(true, 10);
+            game.GiveAnswer(true, 10);
+            game.GiveAnswer(true, 10);
+            game.GiveAnswer(false, 10);
+
+            Assert.Equal(75.0, game.CorrectAnswerPercentage, 2);
+        }
     }    
 }
